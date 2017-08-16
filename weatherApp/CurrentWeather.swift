@@ -103,7 +103,7 @@ class CurrentWeather{
             }
             
             //print(response)         //printing the response pulled from the API
-            completed()
+            completed()              //indicating parsing has been done
             
         }
         

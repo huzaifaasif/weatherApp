@@ -93,14 +93,14 @@
                                 <rect key="frame" x="0.0" y="299" width="414" height="437"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="78" id="fZY-e8-YrD" userLabel="weatherCell" customClass="weatherCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="78" id="fZY-e8-YrD" userLabel="weatherCell" customClass="WeatherCell" customModule="weatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fZY-e8-YrD" id="E9v-dh-yht">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hE7-Hb-arp">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hE7-Hb-arp">
                                                     <rect key="frame" x="16" y="9" width="50" height="59.666666666666671"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59.5" id="caN-hz-8IM"/>
@@ -131,13 +131,13 @@
                                                             <rect key="frame" x="201.33333333333331" y="0.0" width="90.666666666666686" height="59.666666666666671"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="76.5°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgH-zt-gld">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="90.666666666666686" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="90.666666666666686" height="38"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="60.5°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykc-u8-D70">
-                                                                    <rect key="frame" x="0.0" y="24" width="90.666666666666686" height="35.666666666666671"/>
+                                                                    <rect key="frame" x="0.0" y="38" width="90.666666666666686" height="21.666666666666671"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -162,6 +162,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="PMW-iy-kpr" id="PSy-ns-WcY"/>
+                                            <outlet property="maxTemp" destination="ykc-u8-D70" id="wx1-of-3yW"/>
+                                            <outlet property="minTemp" destination="fgH-zt-gld" id="chZ-UZ-RBa"/>
+                                            <outlet property="weatherIcon" destination="hE7-Hb-arp" id="nn7-bJ-uxx"/>
+                                            <outlet property="weatherType" destination="TcC-4R-jvm" id="tAK-T6-Yf0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
