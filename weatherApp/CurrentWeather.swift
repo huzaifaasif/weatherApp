@@ -6,6 +6,11 @@
 //  Copyright © 2017 Huzaifa Asif. All rights reserved.
 //
 
+/* CurrentWeather.swift:
+- Contains the class that stores the members for displaying the current weather info
+- Makes a request to the provided URL and pulls the response in JSON format
+*/
+ 
 import UIKit
 import Alamofire
 
@@ -58,7 +63,7 @@ class CurrentWeather{
         return _currentTemp
     }
     
-    // -----pulling the current weather data from the API-------
+    // -----pulling the current weather data from the API and setting values-------
     func downloadWeatherDetails(completed: @escaping DownloadComplete){
         let currentWeatherURL = URL(string: CURRENT_WEATHER_URL)!
         
@@ -93,7 +98,7 @@ class CurrentWeather{
                         
                         
                         print(kelvinToCelciusPreDiv)
-                        let kelvinToCelcius = Double(round(10 * kelvinToCelciusPreDiv/10))
+                        let kelvinToCelcius = Double(round(10 * kelvinToCelciusPreDiv/10)) //rounding off
                         print(kelvinToCelcius)
                         self._currentTemp = kelvinToCelcius
                         
@@ -102,7 +107,6 @@ class CurrentWeather{
                 
             }
             
-            //print(response)         //printing the response pulled from the API
             completed()              //indicating parsing has been done
             
         }

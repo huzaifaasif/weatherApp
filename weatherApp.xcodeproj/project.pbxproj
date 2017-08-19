@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C03ED041F449011003F66F1 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C03ED031F449011003F66F1 /* WeatherCell.swift */; };
+		6C03ED061F44A717003F66F1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C03ED051F44A717003F66F1 /* Location.swift */; };
 		6C0C620C1F4236C70023B03A /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0C620B1F4236C70023B03A /* Forecast.swift */; };
 		6C1380DE1F3E8D9D0040373D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1380DD1F3E8D9C0040373D /* Constants.swift */; };
 		6C26E31B1F3FE1D000685F1C /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C26E31A1F3FE1CF00685F1C /* CurrentWeather.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		6C03ED031F449011003F66F1 /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		6C03ED051F44A717003F66F1 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		6C0C620B1F4236C70023B03A /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		6C1380DD1F3E8D9C0040373D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6C26E31A1F3FE1CF00685F1C /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				6CF1564D1F34D6E600C04ED5 /* AppDelegate.swift */,
 				6CF1564F1F34D6E600C04ED5 /* WeatherVC.swift */,
+				6C03ED051F44A717003F66F1 /* Location.swift */,
 				6C0C620B1F4236C70023B03A /* Forecast.swift */,
 				6C03ED031F449011003F66F1 /* WeatherCell.swift */,
 				6C26E31A1F3FE1CF00685F1C /* CurrentWeather.swift */,
@@ -235,6 +238,7 @@
 				6C26E31B1F3FE1D000685F1C /* CurrentWeather.swift in Sources */,
 				6C1380DE1F3E8D9D0040373D /* Constants.swift in Sources */,
 				6C0C620C1F4236C70023B03A /* Forecast.swift in Sources */,
+				6C03ED061F44A717003F66F1 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

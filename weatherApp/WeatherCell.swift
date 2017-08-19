@@ -6,6 +6,11 @@
 //  Copyright © 2017 Huzaifa Asif. All rights reserved.
 //
 
+/* WeatherCell.swift:
+ - contains a UITableViewCell class and contains members for displaying the data in each cell
+ - contains a function that sets the UI based on the provided values 
+ */
+
 import UIKit
 
 class WeatherCell: UITableViewCell {

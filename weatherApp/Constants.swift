@@ -14,14 +14,14 @@ let LONGITUDE = "&lon="
 let APP_ID = "&appid="
 let API_KEY = "6ef554fe581dde19a163de845f0ed753"
 
-let lat = 49.249660
-let lon = -123.119339
+var lat = Location.sharedInstanced.latitude!
+var lon = Location.sharedInstanced.longitude!
 
 
 typealias DownloadComplete = () -> ()
 
-let CURRENT_WEATHER_URL = "\(BASE_URL)\(LATITUDE)\(lat)\(LONGITUDE)\(lon)\(APP_ID)\(API_KEY)"
+let CURRENT_WEATHER_URL = "\(BASE_URL)\(LATITUDE)\(String(describing: lat))\(LONGITUDE)\(Location.sharedInstanced.longitude!)\(APP_ID)\(API_KEY)"
 
-let FORECAST_WEATHER_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=\(lat)&lon=\(lon)&appid=6ef554fe581dde19a163de845f0ed753"
+let FORECAST_WEATHER_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=\(Location.sharedInstanced.latitude!)&lon=\(Location.sharedInstanced.longitude!)&appid=6ef554fe581dde19a163de845f0ed753"
 
 

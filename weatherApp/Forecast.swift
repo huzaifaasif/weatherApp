@@ -6,6 +6,11 @@
 //  Copyright © 2017 Huzaifa Asif. All rights reserved.
 //
 
+/* Forecast.swift:
+ - contains a class that stores the members for displaying forecast data
+ - init function that initializes the members of the class based on the object passed in as a parameter
+ */
+
 import UIKit
 import Alamofire
 
