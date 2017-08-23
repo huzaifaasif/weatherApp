@@ -82,10 +82,10 @@
 			children = (
 				6CF1564D1F34D6E600C04ED5 /* AppDelegate.swift */,
 				6CF1564F1F34D6E600C04ED5 /* WeatherVC.swift */,
-				6C03ED051F44A717003F66F1 /* Location.swift */,
 				6C0C620B1F4236C70023B03A /* Forecast.swift */,
-				6C03ED031F449011003F66F1 /* WeatherCell.swift */,
 				6C26E31A1F3FE1CF00685F1C /* CurrentWeather.swift */,
+				6C03ED051F44A717003F66F1 /* Location.swift */,
+				6C03ED031F449011003F66F1 /* WeatherCell.swift */,
 				6C1380DD1F3E8D9C0040373D /* Constants.swift */,
 				6CF156511F34D6E600C04ED5 /* Main.storyboard */,
 				6CF156541F34D6E600C04ED5 /* Assets.xcassets */,

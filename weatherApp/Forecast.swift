@@ -20,6 +20,7 @@ class Forecast{
     var _weatherType:String!
     var _highTemp:String!
     var _lowTemp:String!
+    var _forecastArray = [Forecast]()
     
     init(dict: Dictionary<String,AnyObject>){
         
@@ -61,7 +62,7 @@ class Forecast{
     }
     
     
-    var day:String{        //returns the da
+    var day:String{
         
         return _day
 
@@ -93,7 +94,57 @@ class Forecast{
         return _lowTemp
     }
     
+    var forecastCount:Int{
+        return _forecastArray.count
+    }
+    
+    func getForecastArray(index:Int)->Forecast{
+        return _forecastArray[index]
+    }
+    
+    // Forecast weather parsing
+    
+    func downloadForecastData(completed: @escaping DownloadComplete){
+        let forecastURL = URL(string: FORECAST_WEATHER_URL)!
+        
+        
+        Alamofire.request(forecastURL).responseJSON { response in
+            let result = response.result        //result holds the data in JSON format
+            
+            if let dictionary = result.value as? Dictionary<String,AnyObject>{ //casting it as Dictionary
+                
+                if let list = dictionary["list"] as? [Dictionary<String, AnyObject>]{
+                    
+                    print ("\n\n")
+                    
+                    //initializing cells with respective data
+                    
+                    for obj in list {        // list = array of dictionary
+                        let forecast = Forecast(dict: obj)
+                        self._forecastArray.append(forecast)
+                        
+                        
+                        print(obj)
+                        // print("====>Day is: \(forecast.day)")
+                        // print ("-------------------------\n")
+                    }
+                    self._forecastArray.remove(at: 0)      //first index contains current weather data
+                    
+                    //tableView.reloadData()
+                    
+                }
+            }
+            
+            print("===> ForecastCount: \(self.forecastCount)")
+            completed()
+        }
+        
+        
+    }
+    
 }
+
+
 
 
 extension Date {

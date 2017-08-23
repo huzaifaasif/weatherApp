@@ -24,10 +24,10 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     
     var currentWeather:CurrentWeather!
     var forecast:Forecast!
-    var forecastArray = [Forecast]()
+   
     
     var locationManager = CLLocationManager()
-    var currentLocation: CLLocation!  //an object contains the current lat, lon...
+    var currentLocation: CLLocation!  //an object that contains the current lat, lon...
     
    
     
@@ -49,44 +49,14 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         locationManager.startMonitoringSignificantLocationChanges()
 
         currentWeather = CurrentWeather()
-        
-      
-       
     }
     
-    //Forecast weather parsing
-    func downloadForecastData(completed: @escaping DownloadComplete){
-        let forecastURL = URL(string: FORECAST_WEATHER_URL)!
-        
-        Alamofire.request(forecastURL).responseJSON { response in
-            let result = response.result        //result holds the data in JSON format
-            
-            if let dictionary = result.value as? Dictionary<String,AnyObject>{ //casting it as Dictionary
-                
-                if let list = dictionary["list"] as? [Dictionary<String, AnyObject>]{
-                    
-                    print ("\n\n")
-                    
-                    //initializing cells with respective data
-                    
-                    for obj in list {                       // list = array of dictionary
-                        let forecast = Forecast(dict: obj)
-                        self.forecastArray.append(forecast)
-                        
-                        
-                        print(obj)
-                       // print("====>Day is: \(forecast.day)")
-                       // print ("-------------------------\n")
-                    }
-                    self.forecastArray.remove(at: 0)      //first index contains current weather data
-                    self.tableView.reloadData()
-                }
-            }
-            completed()
-        }
-        
-    
+  
+   
+    func reloadData(){
+        self.tableView.reloadData()
     }
+    
     
 
     func locationAuthorizationStatus(){
@@ -104,7 +74,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             
      //making sure UI is only updated when currentWeather and forecastWeather data have been set
             currentWeather.downloadWeatherDetails {
-                self.downloadForecastData {
+                self.forecast.downloadForecastData {
                     self.updateUI()
                     
                 }
@@ -133,7 +103,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return forecastArray.count
+        return forecast.forecastCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -141,7 +111,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         if let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherCell {
             
             
-            cell.configureCell(forecast: forecastArray[indexPath.row])    //loading respective cells with data
+            cell.configureCell(forecast: forecast.getForecastArray(index: indexPath.row))    //loading respective cells with data
             
             return cell
             
