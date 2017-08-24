@@ -80,12 +80,12 @@
 		6CF1564C1F34D6E500C04ED5 /* weatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				6CF678381F4F5BA400D8EE2A /* View */,
 				6CF1564D1F34D6E600C04ED5 /* AppDelegate.swift */,
 				6CF1564F1F34D6E600C04ED5 /* WeatherVC.swift */,
 				6C0C620B1F4236C70023B03A /* Forecast.swift */,
 				6C26E31A1F3FE1CF00685F1C /* CurrentWeather.swift */,
 				6C03ED051F44A717003F66F1 /* Location.swift */,
-				6C03ED031F449011003F66F1 /* WeatherCell.swift */,
 				6C1380DD1F3E8D9C0040373D /* Constants.swift */,
 				6CF156511F34D6E600C04ED5 /* Main.storyboard */,
 				6CF156541F34D6E600C04ED5 /* Assets.xcassets */,
@@ -93,6 +93,14 @@
 				6CF156591F34D6E600C04ED5 /* Info.plist */,
 			);
 			path = weatherApp;
+			sourceTree = "<group>";
+		};
+		6CF678381F4F5BA400D8EE2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6C03ED031F449011003F66F1 /* WeatherCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		B3044BD7DC00144FA53A9904 /* Frameworks */ = {

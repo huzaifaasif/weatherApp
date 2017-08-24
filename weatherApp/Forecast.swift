@@ -22,6 +22,8 @@ class Forecast{
     var _lowTemp:String!
     var _forecastArray = [Forecast]()
     
+    init(){}
+    
     init(dict: Dictionary<String,AnyObject>){
         
         if let temp = dict["temp"] as? Dictionary<String, AnyObject>{
@@ -49,18 +51,16 @@ class Forecast{
         if let date = dict["dt"] as? Double{
             let unixConvertedDate = Date(timeIntervalSince1970: date)
             
-            let dateFormatter = DateFormatter()
+           /* let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .full
             dateFormatter.dateFormat =  "EEEE"
-            dateFormatter.timeStyle = .none
+            dateFormatter.timeStyle = .none*/
             
             self._day = unixConvertedDate.dayOfTheWeek()
             
         }
         
-        
     }
-    
     
     var day:String{
         
@@ -130,8 +130,6 @@ class Forecast{
                     }
                     self._forecastArray.remove(at: 0)      //first index contains current weather data
                     
-                    //tableView.reloadData()
-                    
                 }
             }
             
@@ -139,15 +137,11 @@ class Forecast{
             completed()
         }
         
-        
     }
     
 }
 
-
-
-
-extension Date {
+extension Date {          //extending the functionality of Date class
     func dayOfTheWeek() -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"

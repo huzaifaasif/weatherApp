@@ -49,14 +49,9 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         locationManager.startMonitoringSignificantLocationChanges()
 
         currentWeather = CurrentWeather()
+        
+        forecast = Forecast()
     }
-    
-  
-   
-    func reloadData(){
-        self.tableView.reloadData()
-    }
-    
     
 
     func locationAuthorizationStatus(){
@@ -76,7 +71,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             currentWeather.downloadWeatherDetails {
                 self.forecast.downloadForecastData {
                     self.updateUI()
-                    
+                    self.tableView.reloadData()
                 }
                 
             }
