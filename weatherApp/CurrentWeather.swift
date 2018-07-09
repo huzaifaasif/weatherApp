@@ -2,9 +2,6 @@
 //  CurrentWeather.swift
 //  weatherApp
 //
-//  Created by Huzaifa Asif on 2017-08-12.
-//  Copyright © 2017 Huzaifa Asif. All rights reserved.
-//
 
 /* CurrentWeather.swift:
 - Contains the class that stores the members for displaying the current weather info
